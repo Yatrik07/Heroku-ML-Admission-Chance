@@ -38,7 +38,7 @@ def predict():
 
         except ValueError:
             return jsonify("Enter valid input")
-            #return render_template( <h3>Enter valid input</h4>} )
+            
 
 
 
