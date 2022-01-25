@@ -5,12 +5,12 @@ import numpy as np
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/' , methods=['GET'])
 @cross_origin()
 def home():
     return render_template('index.html')
 
-@app.route('/predict' , methods=['POST'])
+@app.route('/predict' , methods=['GET','POST'])
 @cross_origin()
 def predict():
     if request.method=='POST':
@@ -38,6 +38,8 @@ def predict():
 
         except ValueError:
             return jsonify("Enter valid input")
+    else:
+        return render_template('index.html')     
             
 
 
