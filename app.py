@@ -37,7 +37,13 @@ def predict():
             return render_template('results.html' , prediction = str(prediction1)+'%')
 
         except ValueError:
-            return jsonify("Enter valid input")
+            return render_template('ValueError.html')
+        except :
+            return render_template('Error.html')		
+		
+		
+
+
     else:
         return render_template('index.html')     
             
