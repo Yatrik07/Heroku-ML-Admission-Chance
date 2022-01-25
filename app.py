@@ -32,9 +32,9 @@ def predict():
             scaler = joblib.load('scaler_object.pickle')
 
             prediction = model.predict(scaler.transform(np.array([[gre_score , toefl_score , university_rating , sop , lor , cgpa , research]])))
-            prediction = round(prediction[0],2) * 100
+            prediction1 = round(prediction[0],2) * 100
 
-            return render_template('results.html' , prediction = str(prediction)+'%')
+            return render_template('results.html' , prediction = str(prediction1)+'%')
 
         except ValueError:
             return jsonify("Enter valid input")
