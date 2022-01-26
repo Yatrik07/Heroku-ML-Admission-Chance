@@ -36,11 +36,7 @@ def predict():
 
         return render_template('results.html' , prediction = str(prediction1)+'%')
 
-        
-        except :
-            return render_template('Error.html')		
-		
-		
+
 
 
     else:
